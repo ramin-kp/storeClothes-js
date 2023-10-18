@@ -9,6 +9,9 @@ module.exports = {
         danaMedium: "dana medium",
         danaBold: "dana bold",
       },
+      container: {
+        center: true,
+      },
     },
   },
   plugins: [],

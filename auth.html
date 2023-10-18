@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loginPage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container">
+      <div class="flex flex-col h-screen items-center justify-center">
+        <h1 class="inline-block text-blue-600 text-3xl font-danaBold">
+          ورود به حساب
+        </h1>
+        <form
+          class="flex gap-y-10 flex-col w-80 h-80 bg-white mt-16 p-9 rounded-md"
+        >
+          <input
+            class="w-full h-12 px-2 font-danaMedium text-blue-500 border border-gray-300 rounded-md outline-none focus:border-2 focus:border-blue-500"
+            type="text"
+            placeholder="نام کاربری"
+          />
+          <input
+            class="w-full h-12 px-2 font-danaMedium text-blue-500 border border-gray-300 rounded-md outline-none focus:border-2 focus:border-blue-500"
+            type="password"
+            placeholder="پسورد"
+          />
+          <button
+            class="w-full h-12 rounded-md text-white font-danaMedium bg-blue-600 hover:bg-blue-700 transition-all"
+            type="submit"
+          >
+            ثبت نام
+          </button>
+        </form>
+        <a
+          class="flex items-center justify-center mt-8 p-2 bg-white rounded-md"
+          href="#"
+          >بازگشت
+          <i class="fa-solid fa-arrow-left mr-2"></i>
+        </a>
+      </div>
+    </div>
+    <script src="./auth.js"></script>
+  </body>
+</html>
