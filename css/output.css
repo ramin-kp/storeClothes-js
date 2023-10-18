@@ -434,6 +434,24 @@ video {
   display: none;
 }
 
+@font-face {
+  font-family: "dana regular";
+
+  src: url(/public/fonts/DanaFaNum-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "dana medium";
+
+  src: url(/public/fonts/DanaFaNum-Medium.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "dana bold";
+
+  src: url(/public/fonts/DanaFaNum-Bold.woff2) format("woff2");
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1889,6 +1907,10 @@ video {
   vertical-align: super;
 }
 
+.font-danaBold {
+  font-family: dana bold;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2285,6 +2307,10 @@ video {
 .content-\[\'this-is-also-valid\]-weirdly-enough\'\] {
   --tw-content: 'this-is-also-valid]-weirdly-enough';
   content: var(--tw-content);
+}
+
+body {
+  font-family: "dana regular";
 }
 
 @media (min-width: 640px) {

@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "dana regular";
+    src: url(/public/fonts/DanaFaNum-Regular.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "dana medium";
+    src: url(/public/fonts/DanaFaNum-Medium.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "dana bold";
+    src: url(/public/fonts/DanaFaNum-Bold.woff2) format("woff2");
+  }
+}
+body {
+  font-family: "dana regular";
+}
