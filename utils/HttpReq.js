@@ -6,7 +6,6 @@ const postData = async (path, data) => {
     headers: { "Content-Type": "application/json" },
   });
   const json = await fetchData.json();
-  console.log(json)
   return json
 };
 
