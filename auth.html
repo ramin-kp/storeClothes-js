@@ -33,7 +33,7 @@
               placeholder="پسورد"
             />
             <button
-              class="w-full h-12 rounded-md text-white font-danaMedium bg-blue-600 hover:bg-blue-700 transition-all"
+              class="form__btn w-full h-12 rounded-md text-white font-danaMedium bg-blue-600 hover:bg-blue-700 transition-all"
               type="submit"
             >
               ثبت نام
@@ -46,6 +46,19 @@
           >بازگشت
           <i class="fa-solid fa-arrow-left mr-2"></i>
         </a>
+      </div>
+      <div
+        class="modal hidden items-center justify-center absolute inset-0 w-screen h-screen bg-gray-100/25 backdrop-blur-sm"
+      >
+        <div
+          class="flex gap-5 flex-col items-center justify-start w-auto h-[150px] p-5 text-white font-danaBold bg-rose-500 rounded-md"
+        >
+          <p class="modal__text"></p>
+          <span
+            class="modal__btn inline-flex items-center justify-center w-full h-10 mt-8 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all cursor-pointer"
+            >تایید
+          </span>
+        </div>
       </div>
     </div>
     <script src="./auth.js" type="module"></script>
