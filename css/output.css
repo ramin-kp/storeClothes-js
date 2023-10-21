@@ -592,7 +592,6 @@ video {
   width: 150px !important;
   height: 150px !important;
   border: 5px solid !important;
-  margin-right: auto !important;
   border-radius: 50% !important;
   border-color: #0000ff transparent !important;
   animation: rotate infinite linear alternate !important;
@@ -602,7 +601,6 @@ video {
   width: 150px;
   height: 150px;
   border: 5px solid;
-  margin-right: auto;
   border-radius: 50%;
   border-color: #0000ff transparent;
   animation: rotate infinite linear alternate;
@@ -740,6 +738,10 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -750,6 +752,10 @@ video {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mr-\[600px\] {
+  margin-right: 600px;
 }
 
 .mt-1 {
@@ -1963,6 +1969,11 @@ video {
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
 }
 
 .bg-blue-500 {

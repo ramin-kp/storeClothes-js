@@ -42,12 +42,12 @@
       <div class="container">
         <div class="h-9 px-5">
           <input
-            class="h-full w-56 p-2 text-blue-600 border-2 focus:border-blue-500 rounded-md outline-none"
+            class="products__input h-full w-56 p-2 text-blue-600 border-2 focus:border-blue-500 rounded-md outline-none"
             type="text"
             placeholder="نام محصول خود را وارد کنید"
           />
           <button
-            class="h-full w-10 bg-blue-500 text-white leading-10 hover:bg-blue-700 rounded-md"
+            class="products__btn h-full w-10 bg-blue-500 text-white leading-10 hover:bg-blue-700 rounded-md"
           >
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -61,15 +61,17 @@
             <ul
               class="w-52 mr-2 text-lg rounded-md child:rounded-md child:p-1.5 child:mt-4 child:cursor-pointer child:transition-all child-hover:bg-blue-200"
             >
-              <li>همه محصولات</li>
-              <li>وسایل الکتریکی</li>
-              <li>جواهرات</li>
-              <li>لباس زنانه</li>
-              <li>لباس مردانه</li>
+              <li class="products__category bg-blue-200">همه محصولات</li>
+              <li class="products__category">وسایل الکتریکی</li>
+              <li class="products__category">جواهرات</li>
+              <li class="products__category">لباس زنانه</li>
+              <li class="products__category">لباس مردانه</li>
             </ul>
           </div>
-          <div class="products__container grid gap-5 grid-cols-4 grow">
-            <div class="loader animate-spin"></div>
+          <div class="products__container grid gap-5 grid-cols-4 grow mb-20">
+            <div class="w-full">
+              <div class="loader mr-[600px] animate-spin"></div>
+            </div>
           </div>
         </div>
       </div>

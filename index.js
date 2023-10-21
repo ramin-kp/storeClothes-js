@@ -1,13 +1,17 @@
 import { getData } from "./utils/HttpReq.js";
 import { getCookie } from "./utils/cookie.js";
-import { showModal } from "./utils/modal.js";
+import { closeModal, showModal } from "./utils/modal.js";
 import { shorten } from "./utils/shortenTitle.js";
+const modalBtn = document.querySelector(".modal__btn");
 
 const loginBtn = document.querySelector(".header__login");
 const dashboardBtn = document.querySelector(".header__dashboard");
 const loader = document.querySelector(".loader");
 const productsContainer = document.querySelector(".products__container");
-
+const productsBtn = document.querySelector(".products__btn");
+const productsInput = document.querySelector(".products__input");
+const category = document.querySelectorAll(".products__category");
+let products = null;
 const showAllProducts = (products) => {
   productsContainer.innerHTML = "";
   products.forEach((product) => {
@@ -32,6 +36,7 @@ const showAllProducts = (products) => {
     productsContainer.innerHTML += renderJsx;
   });
 };
+
 const init = async () => {
   const cookie = getCookie();
   if (!cookie) {
@@ -39,13 +44,39 @@ const init = async () => {
   } else if (cookie) {
     loginBtn.style.display = "none";
   }
-  const products = await getData("products");
+  products = await getData("products");
   if (products) {
     loader.style.display = "none";
   } else if (!products) {
     showModal("با عرض پوزش،لطفا بعدا امتحان کنید");
   }
-  console.log(products);
   showAllProducts(products);
 };
+const searchHandler = () => {
+  const inputText = productsInput.value.trim().toLowerCase();
+  if (!inputText) {
+    productsInput.value = "";
+    showAllProducts(products);
+  } else {
+    const productsFilter = products.filter((item) =>
+      item.title.toLowerCase().includes(inputText)
+    );
+    if (!productsFilter.length) {
+      showModal("محصولی یافت نشد.");
+      productsInput.value = "";
+      showAllProducts(products);
+    } else {
+      productsInput.value = "";
+      showAllProducts(productsFilter);
+    }
+
+    console.log(productsFilter);
+  }
+};
+const categoryHandler = () => {
+  category.forEach((item) => (e) => console.log(e.target.value));
+};
 document.addEventListener("DOMContentLoaded", init);
+productsBtn.addEventListener("click", searchHandler);
+modalBtn.addEventListener("click", closeModal);
+category.addEventListener("click", categoryHandler);
