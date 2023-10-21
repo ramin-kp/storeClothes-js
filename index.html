@@ -28,7 +28,7 @@
               ورود
             </a>
             <a
-              class="header__dashboard inline-flex gap-1 items-center justify-center w-24 h-10 p-1 bg-white font-danaMedium text-black hover:text-white rounded-md hover:bg-black transition-all ease-in"
+              class="header__dashboard inline-flex gap-1 items-center justify-center w-[100px] h-10 p-1 bg-white font-danaMedium text-black hover:text-white rounded-md border border-black hover:bg-black transition-all ease-in"
               href="dashboard.html"
             >
               <i class="fa-solid fa-house"></i>
@@ -38,7 +38,7 @@
         </div>
       </div>
     </header>
-    <main class="mt-32">
+    <main class="products mt-32">
       <div class="container">
         <div class="h-9 px-5">
           <input
@@ -52,7 +52,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
-        <div class="h-auto mt-20 flex px-5">
+        <div class="max-h-[350px] mt-20 flex gap-x-5">
           <div class="bg-white p-5 rounded-md">
             <div class="font-danaBold text-xl text-blue-500">
               <i class="fa-solid fa-sliders mr-1"></i>
@@ -68,9 +68,22 @@
               <li>لباس مردانه</li>
             </ul>
           </div>
-          <div class="grow">
+          <div class="products__container grid gap-5 grid-cols-4 grow">
             <div class="loader animate-spin"></div>
           </div>
+        </div>
+      </div>
+      <div
+        class="modal hidden items-center justify-center absolute inset-0 w-screen h-screen bg-gray-100/25 backdrop-blur-sm"
+      >
+        <div
+          class="flex gap-5 flex-col items-center justify-start w-auto h-[150px] p-5 text-white font-danaBold bg-rose-500 rounded-md"
+        >
+          <p class="modal__text"></p>
+          <span
+            class="modal__btn inline-flex items-center justify-center w-full h-10 mt-8 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all cursor-pointer"
+            >تایید
+          </span>
         </div>
       </div>
     </main>

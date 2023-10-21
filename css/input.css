@@ -30,3 +30,10 @@ body {
     animation: rotate infinite linear alternate;
   }
 }
+@layer utilities {
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
