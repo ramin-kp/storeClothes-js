@@ -6,7 +6,6 @@ const usernameValidate = (username) => {
 const passwordValidate = (password) => {
   const regex = /^.*?\W/;
   const result = regex.test(password);
-  console.log(result);
   return result;
 };
 const validators = (username, password) => {
