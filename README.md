@@ -1,3 +1,6 @@
 # storeClothes-js
-<a href="![Uploading image.png…]()
-">Demo</a>
+<a href="https://js-storewebsite.netlify.app/">Demo</a>
+---
+<a href="https://js-storewebsite.netlify.app/">
+<img src=""/>
+</a>
