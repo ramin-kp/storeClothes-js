@@ -10,7 +10,7 @@ const loader = document.querySelector(".loader");
 const productsContainer = document.querySelector(".products__container");
 const productsBtn = document.querySelector(".products__btn");
 const productsInput = document.querySelector(".products__input");
-const category = document.querySelectorAll(".products__category");
+const list = document.querySelectorAll("li");
 let products = null;
 const showAllProducts = (products) => {
   productsContainer.innerHTML = "";
@@ -69,14 +69,28 @@ const searchHandler = () => {
       productsInput.value = "";
       showAllProducts(productsFilter);
     }
-
-    console.log(productsFilter);
   }
 };
-const categoryHandler = () => {
-  category.forEach((item) => (e) => console.log(e.target.value));
+const categoryHandler = (e) => {
+  const category = e.target.classList;
+  list.forEach((item) => {
+    if (item.classList[0] === category[0]) {
+      item.classList.add("bg-blue-200");
+    } else {
+      item.classList.remove("bg-blue-200");
+    }
+  });
+
+  const allProducts = products.filter((item) =>
+    item.category.includes(category[0])
+  );
+  if (category[0].includes("all-products")) {
+    showAllProducts(products);
+  } else {
+    showAllProducts(allProducts);
+  }
 };
 document.addEventListener("DOMContentLoaded", init);
 productsBtn.addEventListener("click", searchHandler);
 modalBtn.addEventListener("click", closeModal);
-category.addEventListener("click", categoryHandler);
+list.forEach((item) => item.addEventListener("click", categoryHandler));
