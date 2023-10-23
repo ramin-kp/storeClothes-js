@@ -68,22 +68,6 @@ const filteredProducts = () => {
 };
 const searchHandler = () => {
   inputText = productsInput.value.trim().toLowerCase();
-  // if (!inputText) {
-  //   productsInput.value = "";
-  //   showAllProducts(products);
-  // } else {
-  //   const productsFilter = products.filter((item) =>
-  //     item.title.toLowerCase().includes(inputText)
-  //   );
-  //   if (!productsFilter.length) {
-  //     showModal("محصولی یافت نشد.");
-  //     productsInput.value = "";
-  //     showAllProducts(products);
-  //   } else {
-  //     productsInput.value = "";
-  //     showAllProducts(productsFilter);
-  //   }
-  // }
   filteredProducts();
 };
 const categoryHandler = (e) => {

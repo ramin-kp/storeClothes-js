@@ -24,9 +24,9 @@ body {
     width: 150px;
     height: 150px;
     border: 5px solid;
+    margin: 0 auto;
     border-radius: 50%;
     border-color: #0000ff transparent;
-    animation: rotate infinite linear alternate;
   }
 }
 @layer utilities {

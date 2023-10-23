@@ -1,9 +1,14 @@
 import { getData } from "./utils/HttpReq.js";
 import { authHandler } from "./utils/authorization.js";
 const showUser = document.querySelector(".users__info");
+const dashboard = document.querySelector(".dashboard");
+const loader = document.querySelector(".loader");
 
 const renderJsx = async () => {
   const userData = await getData("users");
+  if (userData.length) {
+    loader.style.display="none";
+  }
   showUser.innerHtml = "";
   userData.forEach((user) => {
     const userJsx = `<div class="flex items-center justify-between w-[90%] p-3 my-5 mx-auto border-2 border-blue-300 rounded-md">
@@ -40,5 +45,9 @@ const init = () => {
   authHandler();
   renderJsx();
 };
-
+const logoutHandler = () => {
+  document.cookie = "token=;max-age=0";
+  location.assign("index.html");
+};
 document.addEventListener("DOMContentLoaded", init);
+dashboard.addEventListener("click", logoutHandler);
