@@ -17,7 +17,7 @@ const showAllProducts = (products) => {
   productsContainer.innerHTML = "";
   products.forEach((product) => {
     const renderJsx = `
-  <div class=" bg-white rounded-md p-3">
+  <div class=" md:w-auto bg-white rounded-md p-3">
   <div class="flex items-center justify-between mb-2">
   <span class="p-1 bg-red-100 text-red-600 rounded">
   ${product.rating.count}<i class="fa-solid fa-user mr-1"></i></span>
