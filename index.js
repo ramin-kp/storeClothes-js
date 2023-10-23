@@ -3,7 +3,6 @@ import { getCookie } from "./utils/cookie.js";
 import { closeModal, showModal } from "./utils/modal.js";
 import { shorten } from "./utils/shortenTitle.js";
 const modalBtn = document.querySelector(".modal__btn");
-
 const loginBtn = document.querySelector(".header__login");
 const dashboardBtn = document.querySelector(".header__dashboard");
 const loader = document.querySelector(".loader");
@@ -12,6 +11,8 @@ const productsBtn = document.querySelector(".products__btn");
 const productsInput = document.querySelector(".products__input");
 const list = document.querySelectorAll("li");
 let products = null;
+let inputText = "";
+let category = "all-products";
 const showAllProducts = (products) => {
   productsContainer.innerHTML = "";
   products.forEach((product) => {
@@ -52,43 +53,49 @@ const init = async () => {
   }
   showAllProducts(products);
 };
-const searchHandler = () => {
-  const inputText = productsInput.value.trim().toLowerCase();
-  if (!inputText) {
-    productsInput.value = "";
-    showAllProducts(products);
-  } else {
-    const productsFilter = products.filter((item) =>
-      item.title.toLowerCase().includes(inputText)
-    );
-    if (!productsFilter.length) {
-      showModal("محصولی یافت نشد.");
-      productsInput.value = "";
-      showAllProducts(products);
+const filteredProducts = () => {
+  const filteredProducts = products.filter((product) => {
+    if (category === "all-products") {
+      return product.title.toLowerCase().includes(inputText);
     } else {
-      productsInput.value = "";
-      showAllProducts(productsFilter);
+      return (
+        product.title.toLowerCase().includes(inputText) &&
+        product.category.includes(category)
+      );
     }
-  }
+  });
+  showAllProducts(filteredProducts);
+};
+const searchHandler = () => {
+  inputText = productsInput.value.trim().toLowerCase();
+  // if (!inputText) {
+  //   productsInput.value = "";
+  //   showAllProducts(products);
+  // } else {
+  //   const productsFilter = products.filter((item) =>
+  //     item.title.toLowerCase().includes(inputText)
+  //   );
+  //   if (!productsFilter.length) {
+  //     showModal("محصولی یافت نشد.");
+  //     productsInput.value = "";
+  //     showAllProducts(products);
+  //   } else {
+  //     productsInput.value = "";
+  //     showAllProducts(productsFilter);
+  //   }
+  // }
+  filteredProducts();
 };
 const categoryHandler = (e) => {
-  const category = e.target.classList;
+  category = e.target.classList[0];
   list.forEach((item) => {
-    if (item.classList[0] === category[0]) {
+    if (item.classList === category) {
       item.classList.add("bg-blue-200");
     } else {
       item.classList.remove("bg-blue-200");
     }
   });
-
-  const allProducts = products.filter((item) =>
-    item.category.includes(category[0])
-  );
-  if (category[0].includes("all-products")) {
-    showAllProducts(products);
-  } else {
-    showAllProducts(allProducts);
-  }
+  filteredProducts();
 };
 document.addEventListener("DOMContentLoaded", init);
 productsBtn.addEventListener("click", searchHandler);
